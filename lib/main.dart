@@ -8,7 +8,7 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState(); // <- Doğru imza
 }
 
 class _MyAppState extends State<MyApp> {
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                     top: 180,
                     right: 85,
                     child: _resetButton(),
-                  )
+                  ),
                 ],
               ),
             ],
@@ -50,50 +50,50 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  // --- Senin yardımcı widgetların, aynen korundu ---
   Container _resetButton() {
     return Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 255, 0, 0),
-                      borderRadius: BorderRadius.circular(60),
-                    ),
-                  );
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(60),
+      ),
+    );
   }
 
   AppBar _appBar() {
     return AppBar(
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-        centerTitle: true,
-        title: Text(
-          'Zikirmatik',
-          style: TextStyle(color: const Color.fromARGB(255, 238, 255, 0)),
-        ),
-      );
+      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+      centerTitle: true,
+      title: const Text(
+        'Zikirmatik',
+        style: TextStyle(color: Color.fromARGB(255, 238, 255, 0)),
+      ),
+    );
   }
 
   GestureDetector _gestureDec() {
     return GestureDetector(
-                    onTap: () {
-                      print('tıklandı');
-                    },
-                    child: Container(
-                      width: 115,
-                      height: 115,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(80),
-                      ),
-                    ),
-                  );
+      onTap: () {
+        print('tıklandı');
+      },
+      child: Container(
+        width: 115,
+        height: 115,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(80),
+        ),
+      ),
+    );
   }
 
   Text _counterText() {
-    return Text(
-                    '99999',
-                    style: TextStyle(
-                      fontSize: 65,
-                      color: Color.fromARGB(255, 238, 255, 0),
-                    ),
-                  );
+    return const Text(
+      '99999',
+      style: TextStyle(
+        fontSize: 65,
+        color: Color.fromARGB(255, 238, 255, 0),
+      ),
+    );
   }
 }
