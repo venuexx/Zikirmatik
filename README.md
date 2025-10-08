@@ -25,32 +25,9 @@ Android Emulator
 
 Visual Studio Code
 
-🧩 Kurulum
-
-Flutter’ın kurulu olduğundan emin ol.
-
-Projeyi klonla:
-
-git clone https://github.com/hllibrhmyldrm/zikirmatik.git
-
-
-Terminalden proje dizinine gir:
-
-cd zikirmatik
-
-
-Gerekli paketleri indir:
-
-flutter pub get
-
-
-Uygulamayı çalıştır:
-
-flutter run
-
 📸 Ekran Görüntüsü
 
-https://github.com/venuexx/Zikirmatik/issues/1#issue-3493729426
+[Ekran Görüntüsü](https://github.com/venuexx/Zikirmatik/issues/1#issue-3493729426)
 
 👨‍💻 Geliştirici
 Halil İbrahim Yıldırım
