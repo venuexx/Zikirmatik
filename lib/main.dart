@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,6 +14,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    _counter++;
+    setState(() {}); // <- setState çağrısı eklendi
+  }
+
+  VoidCallback? _resetCounter() {
+    _counter = 0;
+    setState(() {}); // <- setState çağrısı eklendi
+    return null;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -51,12 +67,15 @@ class _MyAppState extends State<MyApp> {
   }
 
   // --- Senin yardımcı widgetların, aynen korundu ---
-  Container _resetButton() {
-    return Container(
-      width: 40,
-      height: 40,
-      decoration: BoxDecoration(
+  GestureDetector _resetButton() {
+    return GestureDetector(
+      onTap: _resetCounter,
+      child: Container(
+       width: 40,
+       height: 40,
+       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(60),
+       )
       ),
     );
   }
@@ -74,9 +93,7 @@ class _MyAppState extends State<MyApp> {
 
   GestureDetector _gestureDec() {
     return GestureDetector(
-      onTap: () {
-        print('tıklandı');
-      },
+      onTap: _incrementCounter,
       child: Container(
         width: 115,
         height: 115,
@@ -88,9 +105,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   Text _counterText() {
-    return const Text(
-      '99999',
-      style: TextStyle(
+    return Text(
+      "$_counter",
+      style: const TextStyle(
         fontSize: 65,
         color: Color.fromARGB(255, 238, 255, 0),
       ),
